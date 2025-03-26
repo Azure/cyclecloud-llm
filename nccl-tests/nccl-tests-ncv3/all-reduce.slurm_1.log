@@ -1,0 +1,52 @@
+Loading mpi/hpcx
+  Loading requirement:
+    /opt/hpcx-v2.18-gcc-mlnx_ofed-ubuntu22.04-cuda12-x86_64/modulefiles/hpcx
+[1721670848.577810] [slurmscripthpc-1:8876 :0]          parser.c:2033 UCX  WARN  unused environment variable: UCX_IB_PCI_RELAXED_ORDERING
+[1721670848.577810] [slurmscripthpc-1:8876 :0]          parser.c:2033 UCX  WARN  (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+[1721670848.577838] [slurmscripthpc-1:8877 :0]          parser.c:2033 UCX  WARN  unused environment variable: UCX_IB_PCI_RELAXED_ORDERING
+[1721670848.577838] [slurmscripthpc-1:8877 :0]          parser.c:2033 UCX  WARN  (set UCX_WARN_UNUSED_ENV_VARS=n to suppress this warning)
+# nThread 1 nGpus 1 minBytes 8 maxBytes 8589934592 step: 2(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid   8876 on slurmscripthpc-1 device  0 [0x00] Tesla V100-PCIE-16GB
+#  Rank  1 Group  0 Pid   8877 on slurmscripthpc-1 device  1 [0x00] Tesla V100-PCIE-16GB
+#
+# Reducing maxBytes to 5287313408 due to memory limitation
+#
+#                                                              out-of-place                       in-place          
+#       size         count      type   redop    root     time   algbw   busbw #wrong     time   algbw   busbw #wrong
+#        (B)    (elements)                               (us)  (GB/s)  (GB/s)            (us)  (GB/s)  (GB/s)       
+           8             2     float     sum      -1    10.94    0.00    0.00      0    10.54    0.00    0.00      0
+          16             4     float     sum      -1    10.54    0.00    0.00      0    10.84    0.00    0.00      0
+          32             8     float     sum      -1    11.15    0.00    0.00      0    10.80    0.00    0.00      0
+          64            16     float     sum      -1    10.86    0.01    0.01      0    10.62    0.01    0.01      0
+         128            32     float     sum      -1    11.21    0.01    0.01      0    11.30    0.01    0.01      0
+         256            64     float     sum      -1    10.77    0.02    0.02      0    11.03    0.02    0.02      0
+         512           128     float     sum      -1    10.81    0.05    0.05      0    11.07    0.05    0.05      0
+        1024           256     float     sum      -1    11.33    0.09    0.09      0    10.97    0.09    0.09      0
+        2048           512     float     sum      -1    11.81    0.17    0.17      0    11.44    0.18    0.18      0
+        4096          1024     float     sum      -1    12.65    0.32    0.32      0    12.34    0.33    0.33      0
+        8192          2048     float     sum      -1    13.98    0.59    0.59      0    13.94    0.59    0.59      0
+       16384          4096     float     sum      -1    18.27    0.90    0.90      0    18.17    0.90    0.90      0
+       32768          8192     float     sum      -1    25.54    1.28    1.28      0    24.96    1.31    1.31      0
+       65536         16384     float     sum      -1    41.99    1.56    1.56      0    41.74    1.57    1.57      0
+      131072         32768     float     sum      -1    74.31    1.76    1.76      0    73.83    1.78    1.78      0
+      262144         65536     float     sum      -1    88.74    2.95    2.95      0    87.66    2.99    2.99      0
+      524288        131072     float     sum      -1    152.4    3.44    3.44      0    152.1    3.45    3.45      0
+     1048576        262144     float     sum      -1    279.9    3.75    3.75      0    280.7    3.73    3.73      0
+     2097152        524288     float     sum      -1    539.2    3.89    3.89      0    537.7    3.90    3.90      0
+     4194304       1048576     float     sum      -1   1070.4    3.92    3.92      0   1068.7    3.92    3.92      0
+     8388608       2097152     float     sum      -1   2131.0    3.94    3.94      0   2130.7    3.94    3.94      0
+    16777216       4194304     float     sum      -1   4244.7    3.95    3.95      0   4245.2    3.95    3.95      0
+    33554432       8388608     float     sum      -1   8470.4    3.96    3.96      0   8471.8    3.96    3.96      0
+    67108864      16777216     float     sum      -1    16918    3.97    3.97      0    16927    3.96    3.96      0
+   134217728      33554432     float     sum      -1    33812    3.97    3.97      0    33811    3.97    3.97      0
+   268435456      67108864     float     sum      -1    67603    3.97    3.97      0    67605    3.97    3.97      0
+   536870912     134217728     float     sum      -1   135184    3.97    3.97      0   135188    3.97    3.97      0
+  1073741824     268435456     float     sum      -1   270369    3.97    3.97      0   270392    3.97    3.97      0
+  2147483648     536870912     float     sum      -1   540692    3.97    3.97      0   540775    3.97    3.97      0
+  4294967296    1073741824     float     sum      -1  1081400    3.97    3.97      0  1081499    3.97    3.97      0
+# Out of bounds values : 0 OK
+# Avg bus bandwidth    : 2.14739 
+#
+
